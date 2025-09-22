@@ -1,0 +1,3 @@
+print(df.info())      # data types, nulls
+print(df.isnull().sum())  # missing values
+df.describe()
