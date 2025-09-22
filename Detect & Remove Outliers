@@ -1,0 +1,9 @@
+# Boxplot visualization
+sns.boxplot(x=df['Fare'])
+plt.show()
+
+# Removing outliers using IQR
+Q1 = df['Fare'].quantile(0.25)
+Q3 = df['Fare'].quantile(0.75)
+IQR = Q3 - Q1
+df = df[(df['Fare'] >= Q1 - 1.5*IQR) & (df['Fare'] <= Q3 + 1.5*IQR)]
